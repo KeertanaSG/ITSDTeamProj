@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import akka.actor.ActorRef;
 import demo.CheckMoveLogic;
 import demo.CommandDemo;
+import demo.DrawTile;
 import structures.GameState;
 
 /**
@@ -27,10 +28,12 @@ public class Initalize implements EventProcessor{
 		gameState.gameInitalised = true;
 		
 		gameState.something = true;
+
+		DrawTile.executeDemo(out);
 		
 		// User 1 makes a change
-		//CommandDemo.executeDemo(out); // this executes the command demo, comment out this when implementing your solution
-		//CheckMoveLogic.executeDemo(out);
+		// CommandDemo.executeDemo(out); // this executes the command demo, comment out this when implementing your solution
+		// CheckMoveLogic.executeDemo(out);
 	}
 
 }

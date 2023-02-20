@@ -5,6 +5,15 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import akka.actor.ActorRef;
 import structures.GameState;
+import commands.BasicCommands;
+import structures.basic.Card;
+import structures.basic.EffectAnimation;
+import structures.basic.Player;
+import structures.basic.Tile;
+import structures.basic.Unit;
+import structures.basic.UnitAnimationType;
+import utils.BasicObjectBuilders;
+import utils.StaticConfFiles;
 
 /**
  * Indicates that the user has clicked an object on the game canvas, in this case a tile.
@@ -27,11 +36,16 @@ public class TileClicked implements EventProcessor{
 
 		int tilex = message.get("tilex").asInt();
 		int tiley = message.get("tiley").asInt();
-		
+		Tile tile = BasicObjectBuilders.loadTile(tilex, tiley);
+		String msg = "Player 1 clicked the tile: " + tilex + "," + tiley;
 		if (gameState.something == true) {
 			// do some logic
-		}
+		BasicCommands.addPlayer1Notification(out, "drawUnit", 2);
+		Unit unit = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
+		unit.setPositionByTile(tile); 
+		BasicCommands.drawUnit(out, unit, tile);
+		try {Thread.sleep(2000);} catch (InterruptedException e) {e.printStackTrace();}
 		
 	}
-
+	}
 }
