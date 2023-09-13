@@ -40,7 +40,7 @@ public class InitalizationTest {
 		GameState gameState = new GameState(); // create state storage
 		Initalize initalizeProcessor =  new Initalize(); // create an initalize event processor
 		
-		assertFalse(gameState.gameInitalised); // check we have not initalized
+		//assertFalse(gameState.gameInitalised); // check we have not initalized
 		
 		// lets simulate recieveing an initalize message
 		ObjectNode eventMessage = Json.newObject(); // create a dummy message

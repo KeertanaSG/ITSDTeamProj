@@ -3,6 +3,7 @@ package actions;
 import java.util.*;
 import akka.actor.ActorRef;
 import commands.BasicCommands;
+
 import structures.GameState;
 import structures.basic.Card;
 import structures.basic.EffectAnimation;
@@ -23,22 +24,31 @@ public class GameBoard {
                                 BasicCommands.addPlayer1Notification(out, "drawingBoard", 2);
                                 Tile tile = BasicObjectBuilders.loadTile(i, j);
                                 BasicCommands.drawTile(out, tile, 0);
+                                try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
                                 gameBoard[i][j] = tile;
-                                // try {
-                                //         Thread.sleep(100);
-                                // } catch (InterruptedException e) {
-                                //         e.printStackTrace();
-                                // }
+   
                         }
                 }
 
-                // GameState.gameBoard = gameBoard;
+
 
         }
 
         //moveUnit
 
         //attack
+        public static void attack(){
+                if(GameState.currentCard.getBigCard().getHealth() == -1){
+                        //operations for spell
+                }
+                else{
+                        //operations for unit
+                        if(GameState.currentCard.getCardname() == "Azure Herald"){
+                                        // HumanPlayer.humanStats.setHealth(0);
+                        }
+                }
+                
+        }
 
         //endTurn
 
