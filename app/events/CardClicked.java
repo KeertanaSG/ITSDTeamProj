@@ -3,6 +3,7 @@ package events;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import actions.HumanPlayer;
 import akka.actor.ActorRef;
 import structures.GameState;
 
@@ -24,6 +25,18 @@ public class CardClicked implements EventProcessor{
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
 		
 		int handPosition = message.get("position").asInt();
+
+		System.out.println(handPosition + " this is handPositon!");
+		
+		gameState.currentCard = HumanPlayer.PlayerHand[handPosition];
+		
+		gameState.isCardSelected = true;
+		
+		
+
+		//highlight card and change player one selected Card
+
+		
 		
 		
 	}
