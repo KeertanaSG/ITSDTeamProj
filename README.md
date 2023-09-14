@@ -35,4 +35,32 @@ To accomplish our goals, we employ modern software development methodologies:
 
 ## Getting Started
 
-To get started with the project, please refer to the project's documentation for installation and setup instructions.
+Follow these steps to build and run the game on your local machine.
+
+1. **Clone the Repository**
+
+   ```shell
+   git clone https://github.com/KeertanaSG/ITSDTeamProj.git
+   ```
+   
+2. **Navigate to the Game Directory**
+
+  ```shell
+  cd ITSDTeamProj
+  ```
+  Use sbt to compile the game's source code:
+  ```shell
+  sbt compile
+  ```
+
+3. **Run the Game**
+  Once the code is compiled successfully, you can run the game using sbt:
+
+  ```shell
+  sbt run
+  ```
+This command will start the game.
+
+4. **Enjoy Playing**
+
+Open your web browser and navigate to http://localhost:8000 to access the game. You can now enjoy playing!
