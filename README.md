@@ -36,10 +36,3 @@ To accomplish our goals, we employ modern software development methodologies:
 ## Getting Started
 
 To get started with the project, please refer to the project's documentation for installation and setup instructions.
-
-## Contributing
-
-We welcome contributions from the community to enhance and improve our tactical card game project. If you'd like to contribute, please fork the repository, make your changes, and submit a pull request.
-
-
-
